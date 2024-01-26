@@ -1,9 +1,17 @@
-import { Switch, Route, Link } from 'react-router-dom'
+import { Redirect, Switch, Route, Link, useHistory } from 'react-router-dom'
 import { FaDragon } from 'react-icons/fa'
+import { HiOutlineLogout } from 'react-icons/hi'
 import classes from './Layout.module.scss'
 import Dragons from '../dragons/Dragons'
 
 function Layout() {
+  const history = useHistory()
+  const token = localStorage.getItem('token')
+
+  if (!token) {
+    return <Redirect to="/login" />
+  }
+
   return (
     <div className={classes.container}>
       <div className={classes.sideBar}>
@@ -19,7 +27,19 @@ function Layout() {
       </div>
 
       <div className={classes.rightContent}>
-        <div className={classes.topBar}></div>
+        <div className={classes.topBar}>
+          <div></div>
+          <button
+            className={classes.logoutButton}
+            onClick={() => {
+              localStorage.setItem('token', '')
+              history.push('/login')
+            }}
+          >
+            <HiOutlineLogout size={28} />
+            <span>Sair</span>
+          </button>
+        </div>
 
         <main className={classes.main}>
           <Switch>

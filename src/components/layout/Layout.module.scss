@@ -5,6 +5,7 @@
 }
 
 .sideBar {
+  padding: 0 40px;
   display: none;
   height: 100dvh;
   width: 300px;
@@ -41,7 +42,7 @@
 }
 
 .sideBarList {
-  padding: 0 40px;
+  padding: 0;
 
   li {
     list-style: none;
@@ -51,5 +52,24 @@
       display: flex;
       gap: 24px;
     }
+  }
+}
+
+.logoutButton {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-family: inherit;
+  font-weight: 600;
+  color: #fd5d5d;
+  padding: 8px;
+
+  span {
+    padding-top: 4px;
   }
 }
