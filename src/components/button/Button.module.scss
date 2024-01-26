@@ -1,4 +1,5 @@
 .button {
+  padding: 8px 20px;
   border-radius: 12px;
   border: 1px solid transparent;
   font-size: 18px;
@@ -12,5 +13,10 @@
 
   &:hover {
     background-color: #edb720;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #fdc323;
+    outline-offset: 4px;
   }
 }

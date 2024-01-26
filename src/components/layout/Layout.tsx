@@ -3,6 +3,7 @@ import { FaDragon } from 'react-icons/fa'
 import { HiOutlineLogout } from 'react-icons/hi'
 import classes from './Layout.module.scss'
 import Dragons from '../dragons/Dragons'
+import DragonForm from '../dragon-form/DragonForm'
 
 function Layout() {
   const history = useHistory()
@@ -43,7 +44,8 @@ function Layout() {
 
         <main className={classes.main}>
           <Switch>
-            <Route exact path="" component={Dragons} />
+            <Route exact path="/dragons" component={Dragons} />
+            <Route path="/dragons/new" component={DragonForm} />
           </Switch>
         </main>
       </div>

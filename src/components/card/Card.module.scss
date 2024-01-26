@@ -1,0 +1,10 @@
+.container {
+  background-color: #fff;
+  box-shadow: 1px 1px 6px 5px #c5c5c51a;
+  padding: 20px;
+  border-radius: 16px;
+
+  @media screen and (min-width: 768px) {
+    padding: 32px;
+  }
+}

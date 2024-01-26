@@ -9,14 +9,15 @@
 }
 
 .input {
-  padding: 8px;
+  padding: 8px 12px;
   font-size: 16px;
   color: #333;
   background-color: #fff;
   border: none;
   border-radius: 12px;
   height: 40px;
-  box-shadow: 1px 1px 6px 5px rgba(204, 204, 204, 0.1294117647);
+  box-shadow: 1px 1px 5px 3px #cccccc33;
+  border: 1px solid #fdc323;
 
   &:focus,
   &:focus-visible {

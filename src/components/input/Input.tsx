@@ -2,13 +2,13 @@ import { useId } from 'react'
 import classes from './Input.module.scss'
 
 type Props = {
-  type: 'text' | 'password'
+  type?: 'text' | 'password'
   label: string
   value: string
   onChange: React.ChangeEventHandler<HTMLInputElement>
 }
 
-function Input({ type, label, value, onChange }: Props) {
+function Input({ type = 'text', label, value, onChange }: Props) {
   const id = useId()
 
   return (
