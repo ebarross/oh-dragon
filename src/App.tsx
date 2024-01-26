@@ -1,5 +1,7 @@
+import Router from './Router'
+
 function App() {
-  return <div>Oh Dragon!</div>
+  return <Router />
 }
 
 export default App
