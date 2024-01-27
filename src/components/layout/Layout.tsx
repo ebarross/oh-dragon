@@ -46,6 +46,7 @@ function Layout() {
           <Switch>
             <Route exact path="/dragons" component={Dragons} />
             <Route path="/dragons/new" component={DragonForm} />
+            <Route path="/dragons/edit/:dragonId" component={DragonForm} />
           </Switch>
         </main>
       </div>

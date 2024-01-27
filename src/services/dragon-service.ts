@@ -14,6 +14,18 @@ async function fetchDragons(): Promise<Dragon[]> {
   return await response.json()
 }
 
+async function fetchDragon(id: Dragon['id']): Promise<Dragon> {
+  const url = `${API_URL}/dragon/${id}`
+
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error('Network error')
+  }
+
+  return await response.json()
+}
+
 type NewDragon = Pick<Dragon, 'name' | 'type' | 'histories'>
 
 async function createDragon(newDragon: NewDragon): Promise<Dragon> {
@@ -35,4 +47,26 @@ async function createDragon(newDragon: NewDragon): Promise<Dragon> {
   return await response.json()
 }
 
-export default { fetchDragons, createDragon }
+async function updateDragon(
+  id: Dragon['id'],
+  newDragon: NewDragon
+): Promise<Dragon> {
+  const url = `${API_URL}/dragon/${id}`
+  const data = { ...newDragon }
+
+  const response = await fetch(url, {
+    method: 'PUT',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+
+  if (!response.ok) {
+    throw new Error('Network error')
+  }
+
+  return await response.json()
+}
+
+export default { fetchDragons, fetchDragon, createDragon, updateDragon }

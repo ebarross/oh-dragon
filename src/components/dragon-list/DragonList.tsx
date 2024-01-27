@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router-dom'
 import { FaRegEye } from 'react-icons/fa'
 import { FaPen } from 'react-icons/fa'
 import { FaRegTrashCan } from 'react-icons/fa6'
@@ -16,6 +17,8 @@ type Props = {
 }
 
 function DragonList({ list }: Props) {
+  const history = useHistory()
+
   return (
     <table className={classes.table}>
       <thead>
@@ -47,7 +50,7 @@ function DragonList({ list }: Props) {
               <button
                 aria-label="Editar"
                 className={classes.button}
-                onClick={() => {}}
+                onClick={() => history.push(`/dragons/edit/${dragon.id}`)}
               >
                 <FaPen size={18} />
               </button>
