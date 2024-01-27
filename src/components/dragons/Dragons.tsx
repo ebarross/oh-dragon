@@ -1,13 +1,14 @@
 import { useHistory } from 'react-router-dom'
 import classes from './Dragons.module.scss'
-import useDragons from '../../hooks/use-dragons'
-import DragonList from '../dragon-list/DragonList'
+import useDragons from '../../hooks/useDragons'
+import DragonList, { Dragon } from '../dragon-list/DragonList'
 import Button from '../button/Button'
 import Card from '../card/Card'
+import DragonService from '../../services/dragon-service'
 
 function Dragons() {
   const history = useHistory()
-  const { data, loading, error } = useDragons()
+  const { data, loading, error, fetch } = useDragons()
 
   const orderedDragons = data?.sort((a, b) => {
     if (a.name < b.name) {
@@ -18,6 +19,16 @@ function Dragons() {
     }
     return 0
   })
+
+  const removeDragon = (dragonId: Dragon['id']) => {
+    const confirmed = confirm('Deseja confirmar a remoção de dragão?')
+
+    if (!confirmed) return
+
+    DragonService.removeDragon(dragonId)
+      .then(() => fetch())
+      .catch(() => alert('Não foi possível remover o dragão. Tente novamente.'))
+  }
 
   return (
     <Card>
@@ -30,7 +41,7 @@ function Dragons() {
       ) : loading || !orderedDragons ? (
         <div>Carregando dragões...</div>
       ) : (
-        <DragonList list={orderedDragons} />
+        <DragonList list={orderedDragons} onRemove={removeDragon} />
       )}
     </Card>
   )

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import DragonService from '../services/dragon-service'
 import { Dragon } from '../components/dragon-list/DragonList'
 
@@ -7,23 +7,29 @@ function useDragons() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  useEffect(() => {
+  const fetch = useCallback(() => {
     setLoading(true)
 
     DragonService.fetchDragons()
       .then((dragons) => {
         if (dragons) {
           setData(dragons)
+          setError(null)
         }
       })
       .catch((err) => setError(err))
       .finally(() => setLoading(false))
   }, [])
 
+  useEffect(() => {
+    fetch()
+  }, [fetch])
+
   return {
     data,
     loading,
     error,
+    fetch,
   }
 }
 

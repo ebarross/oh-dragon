@@ -14,9 +14,10 @@ export type Dragon = {
 
 type Props = {
   list: Dragon[]
+  onRemove: (dragonId: Dragon['id']) => void
 }
 
-function DragonList({ list }: Props) {
+function DragonList({ list, onRemove }: Props) {
   const history = useHistory()
 
   return (
@@ -57,7 +58,7 @@ function DragonList({ list }: Props) {
               <button
                 aria-label="Remover"
                 className={classes.button}
-                onClick={() => {}}
+                onClick={() => onRemove(dragon.id)}
               >
                 <FaRegTrashCan size={18} />
               </button>

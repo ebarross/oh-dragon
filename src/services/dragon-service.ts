@@ -69,4 +69,22 @@ async function updateDragon(
   return await response.json()
 }
 
-export default { fetchDragons, fetchDragon, createDragon, updateDragon }
+async function removeDragon(id: Dragon['id']): Promise<Dragon> {
+  const url = `${API_URL}/dragon/${id}`
+
+  const response = await fetch(url, { method: 'DELETE' })
+
+  if (!response.ok) {
+    throw new Error('Network error')
+  }
+
+  return await response.json()
+}
+
+export default {
+  fetchDragons,
+  fetchDragon,
+  createDragon,
+  updateDragon,
+  removeDragon,
+}
