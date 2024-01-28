@@ -31,7 +31,7 @@ function Login() {
   return (
     <div className={classes.container}>
       <h1>Login</h1>
-      <form className={classes.form} onSubmit={submitLogin}>
+      <form className={classes.form} onSubmit={submitLogin} noValidate>
         <Input
           type="text"
           label="E-mail:"
