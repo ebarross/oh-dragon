@@ -1,3 +1,7 @@
+.container {
+  overflow-x: auto;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -27,30 +31,32 @@
   }
 }
 
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
 .button {
   background: none;
-  border: none;
   border-radius: 12px;
   color: #555;
   width: 36px;
   height: 36px;
   cursor: pointer;
-
-  & + & {
-    margin-left: 8px;
-  }
+  border: 2px solid;
 
   &:nth-child(1) {
-    background-color: #fdc323;
+    color: #fdc323;
+    border-color: #fdc323;
   }
 
   &:nth-child(2) {
-    background-color: #b5b4b4;
-    color: #fff;
+    color: #b5b4b4;
+    border-color: #b5b4b4;
   }
 
   &:nth-child(3) {
-    background-color: #fd5d5d;
-    color: #fff;
+    color: #fd5d5d;
+    border-color: #fd5d5d;
   }
 }

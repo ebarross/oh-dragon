@@ -4,23 +4,66 @@
 }
 
 .sideBar {
-  padding: 0 40px;
   display: none;
   height: 100dvh;
   width: 270px;
   flex-shrink: 0;
   border-right: 2px solid #e5e9f2;
   background-color: #fff;
+  position: relative;
+
+  &.open {
+    display: block;
+  }
+}
+
+.sideBarContent {
+  margin-top: 100px;
+  padding: 0 40px;
 
   @media screen and (min-width: 768px) {
-    display: block;
+    margin-top: 140px;
+  }
+}
+
+.closeButton {
+  color: #242424;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  @media screen and (min-width: 768px) {
+    top: 35px;
+    right: 20px;
+  }
+}
+
+.sideBarList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 0;
+
+  li {
+    list-style: none;
+    font-size: 20px;
+    color: #aaaaaa;
+
+    &.sideBarLinkActive {
+      color: #242424;
+    }
+
+    a {
+      display: flex;
+      gap: 24px;
+    }
   }
 }
 
 .topBar {
   width: 100%;
   height: 60px;
-  padding: 8px;
+  padding: 16px;
   border-bottom: 2px solid #c9c9c940;
   display: flex;
   justify-content: space-between;
@@ -29,6 +72,14 @@
   @media screen and (min-width: 768px) {
     height: 100px;
     padding: 20px;
+  }
+}
+
+.hamburgerMenu {
+  display: flex;
+
+  button {
+    color: #242424;
   }
 }
 
@@ -45,34 +96,12 @@
   }
 }
 
-.sideBarContent {
-  margin-top: 140px;
-}
-
-.sideBarList {
-  padding: 0;
-
-  li {
-    list-style: none;
-    font-size: 20px;
-
-    a {
-      display: flex;
-      gap: 24px;
-    }
-  }
-}
-
 .logoutButton {
-  background: none;
-  border: none;
   color: inherit;
-  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 20px;
-  font-family: inherit;
+  gap: 8px;
+  font-size: 18px;
   font-weight: 600;
   color: #fd5d5d;
   padding: 8px;

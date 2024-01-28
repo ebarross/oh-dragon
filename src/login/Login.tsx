@@ -31,28 +31,28 @@ function Login() {
   return (
     <div className={classes.container}>
       <h1>Login</h1>
-      <div className={classes.card}>
-        <form className={classes.form} onSubmit={submitLogin}>
-          <Input
-            type="text"
-            label="E-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <Input
-            type="password"
-            label="Senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+      <form className={classes.form} onSubmit={submitLogin}>
+        <Input
+          type="text"
+          label="E-mail:"
+          value={email}
+          required
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input
+          type="password"
+          label="Senha:"
+          value={password}
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-          {errorMessage ? (
-            <p className={classes.errorMessage}>{errorMessage}</p>
-          ) : null}
+        {errorMessage ? (
+          <p className={classes.errorMessage}>{errorMessage}</p>
+        ) : null}
 
-          <Button type="submit">{loading ? 'Carregando...' : 'Entrar'}</Button>
-        </form>
-      </div>
+        <Button type="submit">{loading ? 'Carregando...' : 'Entrar'}</Button>
+      </form>
     </div>
   )
 }

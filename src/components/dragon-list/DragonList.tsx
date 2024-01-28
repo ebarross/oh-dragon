@@ -21,48 +21,53 @@ function DragonList({ list, onRemove }: Props) {
   const history = useHistory()
 
   return (
-    <table className={classes.table}>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Tipo</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        {list.map((dragon) => (
-          <tr key={dragon.id}>
-            <td>{dragon.id}</td>
-            <td>{dragon.name}</td>
-            <td>{dragon.type}</td>
-            <td>
-              <button
-                aria-label="Ver detalhes"
-                className={classes.button}
-                onClick={() => history.push(`/dragons/details/${dragon.id}`)}
-              >
-                <FaRegEye size={18} />
-              </button>
-              <button
-                aria-label="Editar"
-                className={classes.button}
-                onClick={() => history.push(`/dragons/edit/${dragon.id}`)}
-              >
-                <FaPen size={18} />
-              </button>
-              <button
-                aria-label="Remover"
-                className={classes.button}
-                onClick={() => onRemove(dragon.id)}
-              >
-                <FaRegTrashCan size={18} />
-              </button>
-            </td>
+    <div className={classes.container}>
+      <table className={classes.table}>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Ações</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {list.map((dragon) => (
+            <tr key={dragon.id}>
+              <td>{dragon.id}</td>
+              <td>{dragon.name}</td>
+              <td>{dragon.type}</td>
+              <td className={classes.actions}>
+                <button
+                  title="Ver detalhes"
+                  aria-label="Ver detalhes"
+                  className={classes.button}
+                  onClick={() => history.push(`/dragons/details/${dragon.id}`)}
+                >
+                  <FaRegEye size={18} />
+                </button>
+                <button
+                  title="Editar"
+                  aria-label="Editar"
+                  className={classes.button}
+                  onClick={() => history.push(`/dragons/edit/${dragon.id}`)}
+                >
+                  <FaPen size={18} />
+                </button>
+                <button
+                  title="Remover"
+                  aria-label="Remover"
+                  className={classes.button}
+                  onClick={() => onRemove(dragon.id)}
+                >
+                  <FaRegTrashCan size={18} />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 
