@@ -6,7 +6,7 @@ type Credentials = {
 function login({ email, password }: Credentials): Promise<void> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (email === 'ebarros@gmail.com' && password === '2974825') {
+      if (email === 'user@gmail.com' && password === 'ohdragon') {
         localStorage.setItem('token', 'token-test')
         resolve()
       } else {
@@ -16,6 +16,11 @@ function login({ email, password }: Credentials): Promise<void> {
   })
 }
 
+function isUserLogged() {
+  return Boolean(localStorage.getItem('token'))
+}
+
 export default {
   login,
+  isUserLogged,
 }

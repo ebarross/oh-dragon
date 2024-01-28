@@ -16,6 +16,7 @@ import DragonDetails from '../dragon-details/DragonDetails'
 import classes from './Layout.module.scss'
 import Dragons from '../dragons/Dragons'
 import DragonForm from '../dragon-form/DragonForm'
+import AuthService from '../../services/auth-service'
 
 function isMobile() {
   return window.matchMedia('(max-width: 767px)').matches
@@ -25,9 +26,8 @@ function Layout() {
   const history = useHistory()
   const { pathname } = useLocation()
   const [sidebarOpen, setSidebarOpen] = useState(isMobile() ? false : true)
-  const token = localStorage.getItem('token')
 
-  if (!token) {
+  if (!AuthService.isUserLogged()) {
     return <Redirect to="/login" />
   }
 
