@@ -40,6 +40,8 @@ function Dragons() {
         <div>Erro ao carregar dragões. Tente novamente.</div>
       ) : loading || !orderedDragons ? (
         <div>Carregando dragões...</div>
+      ) : orderedDragons.length === 0 ? (
+        <div>Não há dragões cadastrados.</div>
       ) : (
         <DragonList list={orderedDragons} onRemove={removeDragon} />
       )}
