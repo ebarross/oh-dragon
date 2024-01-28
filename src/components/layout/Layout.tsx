@@ -12,11 +12,11 @@ import { HiOutlineLogout } from 'react-icons/hi'
 import { FaHouse } from 'react-icons/fa6'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { CgClose } from 'react-icons/cg'
-import DragonDetails from '../dragon-details/DragonDetails'
 import classes from './Layout.module.scss'
-import Dragons from '../dragons/Dragons'
-import DragonForm from '../dragon-form/DragonForm'
 import AuthService from '../../services/auth-service'
+import DragonDetails from '../dragon-details/DragonDetails'
+import DragonList from '../dragon-list/DragonList'
+import DragonForm from '../dragon-form/DragonForm'
 
 function isMobile() {
   return window.matchMedia('(max-width: 767px)').matches
@@ -85,7 +85,7 @@ function Layout() {
 
         <main className={classes.main}>
           <Switch>
-            <Route exact path="/dragons" component={Dragons} />
+            <Route exact path="/dragons" component={DragonList} />
             <Route path="/dragons/new" component={DragonForm} />
             <Route path="/dragons/edit/:dragonId" component={DragonForm} />
             <Route
