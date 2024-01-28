@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import classes from './DragonDetails.module.scss'
 import Card from '../card/Card'
-import { Dragon } from '../dragon-list/DragonList'
+import { Dragon } from '../../types/dragon'
 import useDragon from '../../hooks/useDragon'
 import { formatDateTime } from '../../utils/date'
 

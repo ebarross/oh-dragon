@@ -7,14 +7,7 @@ import Card from '../card/Card'
 import useDragons from '../../hooks/useDragons'
 import DragonService from '../../services/dragon-service'
 import Button from '../button/Button'
-
-export type Dragon = {
-  id: string
-  name: string
-  type: string
-  histories: string
-  createdAt: string
-}
+import { Dragon } from '../../types/dragon'
 
 function DragonList() {
   const { data, loading, error, fetch } = useDragons()

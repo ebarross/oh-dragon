@@ -1,8 +1,9 @@
 import { describe, expect, test, vitest } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import DragonList, { Dragon } from './DragonList'
 import { MemoryRouter, Route } from 'react-router-dom'
+import DragonList from './DragonList'
+import { Dragon } from '../../types/dragon'
 import DragonService from '../../services/dragon-service'
 
 describe('Dragons', () => {

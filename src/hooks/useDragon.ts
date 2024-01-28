@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import DragonService from '../services/dragon-service'
-import { Dragon } from '../components/dragon-list/DragonList'
+import { Dragon } from '../types/dragon'
 
 function useDragon(dragonId: Dragon['id']) {
   const [data, setData] = useState<Dragon | null>(null)
