@@ -1,6 +1,7 @@
 import { Redirect, Switch, Route, Link, useHistory } from 'react-router-dom'
 import { FaDragon } from 'react-icons/fa'
 import { HiOutlineLogout } from 'react-icons/hi'
+import DragonDetails from '../dragon-details/DragonDetails'
 import classes from './Layout.module.scss'
 import Dragons from '../dragons/Dragons'
 import DragonForm from '../dragon-form/DragonForm'
@@ -47,6 +48,10 @@ function Layout() {
             <Route exact path="/dragons" component={Dragons} />
             <Route path="/dragons/new" component={DragonForm} />
             <Route path="/dragons/edit/:dragonId" component={DragonForm} />
+            <Route
+              path="/dragons/details/:dragonId"
+              component={DragonDetails}
+            />
           </Switch>
         </main>
       </div>

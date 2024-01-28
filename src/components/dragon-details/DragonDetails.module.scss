@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    margin: 0 0 20px;
+  }
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 120px;
+  }
+}
+
+.info {
+  p {
+    margin: 0;
+  }
+
+  & > p:first-child {
+    font-size: 20px;
+    color: #999;
+    margin-bottom: -4px;
+  }
+
+  & > p:nth-child(2) {
+    font-size: 28px;
+  }
+}

@@ -27,8 +27,6 @@ function DragonList({ list, onRemove }: Props) {
           <th>ID</th>
           <th>Nome</th>
           <th>Tipo</th>
-          <th>Histórias</th>
-          <th>Data de criação</th>
           <th>Ações</th>
         </tr>
       </thead>
@@ -38,13 +36,11 @@ function DragonList({ list, onRemove }: Props) {
             <td>{dragon.id}</td>
             <td>{dragon.name}</td>
             <td>{dragon.type}</td>
-            <td>{dragon.histories}</td>
-            <td>{dragon.createdAt}</td>
             <td>
               <button
                 aria-label="Ver detalhes"
                 className={classes.button}
-                onClick={() => {}}
+                onClick={() => history.push(`/dragons/details/${dragon.id}`)}
               >
                 <FaRegEye size={18} />
               </button>
