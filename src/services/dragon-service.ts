@@ -1,6 +1,6 @@
 import { Dragon } from '../types/dragon'
 
-const API_URL = 'http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1'
+const API_URL = 'https://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1'
 
 async function fetchDragons(): Promise<Dragon[]> {
   const url = `${API_URL}/dragon`
