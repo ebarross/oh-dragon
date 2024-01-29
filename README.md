@@ -9,8 +9,14 @@ It was built with:
 - React
 - TypeScript
 - CSS Modules
+- React Router
 - Vite
 - Vitest
+
+## Demo
+
+A live demo of the app can be accessed at:  
+https://oh-dragon.vercel.app/
 
 ## Setup
 
@@ -34,7 +40,9 @@ Run the project:
 npm run dev
 ```
 
-The app will open with a login page. Enter the following credentials to access the dashboard:
+The app will open at: http://localhost:5173/
+
+It will show a login page. You can enter the following credentials to access the dashboard:
 
 - E-mail: `user@gmail.com`
 - Senha: `ohdragon`
