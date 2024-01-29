@@ -1,30 +1,48 @@
-# React + TypeScript + Vite
+# Oh Dragon! Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project
 
-Currently, two official plugins are available:
+This is a complete CRUD web app for dragons, with a simple and beautiful UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It was built with:
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- CSS Modules
+- Vite
+- Vitest
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Setup
 
-- Configure the top-level `parserOptions` property like this:
+You will need Node 18 to run it. If you have nvm installed, run the following command inside the project folder:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```shell
+nvm use
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Install NPM dependencies:
+
+```shell
+npm install
+```
+
+## Running the project
+
+Run the project:
+
+```shell
+npm run dev
+```
+
+The app will open with a login page. Enter the following credentials to access the dashboard:
+
+- E-mail: `user@gmail.com`
+- Senha: `ohdragon`
+
+## Testing
+
+Execute tests:
+
+```shell
+npm run test
+```
