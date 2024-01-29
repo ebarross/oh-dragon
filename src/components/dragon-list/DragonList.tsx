@@ -8,6 +8,7 @@ import useDragons from '../../hooks/useDragons'
 import DragonService from '../../services/dragon-service'
 import Button from '../button/Button'
 import { Dragon } from '../../types/dragon'
+import IconButton from '../icon-button/IconButton'
 
 function DragonList() {
   const { data, loading, error, fetch } = useDragons()
@@ -60,32 +61,29 @@ function DragonList() {
                   <td>{dragon.name}</td>
                   <td>{dragon.type}</td>
                   <td className={classes.actions}>
-                    <button
-                      title="Ver detalhes"
-                      aria-label="Ver detalhes"
-                      className={classes.button}
+                    <IconButton
+                      variant="primary"
+                      label="Ver detalhes"
                       onClick={() =>
                         history.push(`/dragons/details/${dragon.id}`)
                       }
                     >
                       <FaRegEye size={18} />
-                    </button>
-                    <button
-                      title="Editar"
-                      aria-label="Editar"
-                      className={classes.button}
+                    </IconButton>
+                    <IconButton
+                      variant="secondary"
+                      label="Editar"
                       onClick={() => history.push(`/dragons/edit/${dragon.id}`)}
                     >
                       <FaPen size={18} />
-                    </button>
-                    <button
-                      title="Remover"
-                      aria-label="Remover"
-                      className={classes.button}
+                    </IconButton>
+                    <IconButton
+                      variant="danger"
+                      label="Remover"
                       onClick={() => removeDragon(dragon.id)}
                     >
                       <FaRegTrashCan size={18} />
-                    </button>
+                    </IconButton>
                   </td>
                 </tr>
               ))}

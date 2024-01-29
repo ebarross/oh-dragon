@@ -44,28 +44,3 @@
   display: flex;
   gap: 8px;
 }
-
-.button {
-  background: none;
-  border-radius: 12px;
-  color: #555;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  border: 2px solid;
-
-  &:nth-child(1) {
-    color: #fdc323;
-    border-color: #fdc323;
-  }
-
-  &:nth-child(2) {
-    color: #b5b4b4;
-    border-color: #b5b4b4;
-  }
-
-  &:nth-child(3) {
-    color: #fd5d5d;
-    border-color: #fd5d5d;
-  }
-}

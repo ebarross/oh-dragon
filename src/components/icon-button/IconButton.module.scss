@@ -1,0 +1,24 @@
+.button {
+  background: none;
+  border-radius: 12px;
+  color: #555;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  border: 2px solid;
+
+  &.primary {
+    color: #fdc323;
+    border-color: #fdc323;
+  }
+
+  &.secondary {
+    color: #b5b4b4;
+    border-color: #b5b4b4;
+  }
+
+  &.danger {
+    color: #fd5d5d;
+    border-color: #fd5d5d;
+  }
+}
