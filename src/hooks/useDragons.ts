@@ -10,7 +10,7 @@ function useDragons() {
   const fetch = useCallback(() => {
     setLoading(true)
 
-    DragonService.fetchDragons()
+    DragonService.fetchDragons({ sortBy: 'name' })
       .then((dragons) => {
         if (dragons) {
           setData(dragons)

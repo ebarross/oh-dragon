@@ -11,14 +11,8 @@ import { Dragon } from '../../types/dragon'
 import IconButton from '../icon-button/IconButton'
 
 function DragonList() {
-  const { data, loading, error, fetch } = useDragons()
+  const { data: dragons, loading, error, fetch } = useDragons()
   const history = useHistory()
-
-  const dragons = data?.sort((a, b) => {
-    if (a.name < b.name) return -1
-    if (a.name > b.name) return 1
-    return 0
-  })
 
   const removeDragon = (dragonId: Dragon['id']) => {
     const confirmed = confirm('Deseja confirmar a remoção de dragão?')

@@ -2,8 +2,18 @@ import { Dragon } from '../types/dragon'
 
 const API_URL = 'https://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1'
 
-async function fetchDragons(): Promise<Dragon[]> {
-  const url = `${API_URL}/dragon`
+type NewDragon = Pick<Dragon, 'name' | 'type' | 'histories'>
+type FetchParams = {
+  sortBy: keyof Dragon
+}
+
+async function fetchDragons(params?: FetchParams): Promise<Dragon[]> {
+  const url = new URL(`${API_URL}/dragon`)
+
+  if (params?.sortBy) {
+    url.searchParams.append('sortBy', params.sortBy)
+    url.searchParams.append('order', 'asc')
+  }
 
   const response = await fetch(url)
 
@@ -25,8 +35,6 @@ async function fetchDragon(id: Dragon['id']): Promise<Dragon> {
 
   return await response.json()
 }
-
-type NewDragon = Pick<Dragon, 'name' | 'type' | 'histories'>
 
 async function createDragon(newDragon: NewDragon): Promise<Dragon> {
   const url = `${API_URL}/dragon`
