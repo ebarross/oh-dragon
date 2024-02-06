@@ -49,8 +49,14 @@ It will show a login page. You can enter the following credentials to access the
 
 ## Testing
 
-Execute tests:
+Execute all tests:
 
 ```shell
 npm run test
+```
+
+Execute tests and generate coverage:
+
+```shell
+npm run coverage
 ```
