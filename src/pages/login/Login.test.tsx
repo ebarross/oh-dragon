@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route } from 'react-router-dom'
 import Login from './Login'
-import AuthService from '../services/auth-service'
+import { AuthService } from '../../services/auth/auth-service'
 
 describe('Login', () => {
   test('show error when data is not provided', async () => {

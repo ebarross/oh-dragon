@@ -3,12 +3,12 @@ import { FaRegEye } from 'react-icons/fa'
 import { FaPen } from 'react-icons/fa'
 import { FaRegTrashCan } from 'react-icons/fa6'
 import classes from './DragonList.module.scss'
-import Card from '../card/Card'
+import { DragonService } from '../../services/dragon/dragon-service'
 import useDragons from '../../hooks/useDragons'
-import DragonService from '../../services/dragon-service'
-import Button from '../button/Button'
-import { Dragon } from '../../types/dragon'
-import IconButton from '../icon-button/IconButton'
+import { Dragon } from '../../interfaces/dragon'
+import Card from '../../components/card/Card'
+import Button from '../../components/button/Button'
+import IconButton from '../../components/icon-button/IconButton'
 
 function DragonList() {
   const { data: dragons, loading, error, fetch } = useDragons()

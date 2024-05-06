@@ -1,4 +1,4 @@
-import { Dragon } from '../../types/dragon'
+import { Dragon } from '../../interfaces/dragon'
 
 const API_URL = 'https://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1'
 

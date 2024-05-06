@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
-import DragonService from '../services/dragon-service'
-import { Dragon } from '../types/dragon'
+import { DragonService } from '../services/dragon/dragon-service'
+import { Dragon } from '../interfaces/dragon'
 
 function useDragons() {
   const [data, setData] = useState<Dragon[] | null>(null)

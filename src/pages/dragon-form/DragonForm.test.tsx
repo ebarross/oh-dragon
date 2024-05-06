@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route } from 'react-router-dom'
 import DragonForm from './DragonForm'
-import DragonService from '../../services/dragon-service'
-import { Dragon } from '../../types/dragon'
+import { Dragon } from '../../interfaces/dragon'
+import { DragonService } from '../../services/dragon/dragon-service'
 
 const dragonId = '1'
 const dragon: Dragon = {

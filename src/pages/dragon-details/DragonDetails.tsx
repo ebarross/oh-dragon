@@ -1,12 +1,11 @@
 import { useParams } from 'react-router-dom'
 import classes from './DragonDetails.module.scss'
-import Card from '../card/Card'
-import { Dragon } from '../../types/dragon'
 import useDragon from '../../hooks/useDragon'
+import Card from '../../components/card/Card'
 import { formatDateTime } from '../../utils/date'
 
 type Params = {
-  dragonId: Dragon['id']
+  dragonId: string
 }
 
 function DragonDetails() {

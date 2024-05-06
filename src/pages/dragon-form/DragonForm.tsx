@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import classes from './DragonForm.module.scss'
-import DragonService from '../../services/dragon-service'
-import Input from '../input/Input'
-import Button from '../button/Button'
-import Card from '../card/Card'
+import { DragonService } from '../../services/dragon/dragon-service'
+import Input from '../../components/input/Input'
+import Button from '../../components/button/Button'
+import Card from '../../components/card/Card'
 
 type Params = {
   dragonId: string

@@ -1,4 +1,4 @@
-export type Dragon = {
+export interface Dragon {
   id: string
   name: string
   type: string

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import classes from './Login.module.scss'
-import AuthService from '../services/auth-service'
-import Input from '../components/input/Input'
-import Button from '../components/button/Button'
+import { AuthService } from '../../services/auth/auth-service'
+import Input from '../../components/input/Input'
+import Button from '../../components/button/Button'
 
 function Login() {
   const history = useHistory()

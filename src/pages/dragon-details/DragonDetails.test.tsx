@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react'
 import { describe, expect, test, vitest } from 'vitest'
 import { MemoryRouter, Route } from 'react-router-dom'
 import DragonDetails from './DragonDetails'
-import DragonService from '../../services/dragon-service'
-import { Dragon } from '../../types/dragon'
+import { DragonService } from '../../services/dragon/dragon-service'
+import { Dragon } from '../../interfaces/dragon'
 
 const dragonId = '1'
 const dragon: Dragon = {

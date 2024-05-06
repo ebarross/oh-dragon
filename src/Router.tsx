@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import Login from './login/Login'
-import Layout from './components/layout/Layout'
+import Login from './pages/login/Login'
+import Layout from './layout/private-layout/PrivateLayout'
 
 function Router() {
   return (

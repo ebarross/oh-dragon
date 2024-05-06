@@ -1,18 +1,18 @@
 import { useState } from 'react'
 import { Redirect, Switch, Route } from 'react-router-dom'
-import classes from './Layout.module.scss'
-import Sidebar from '../sidebar/Sidebar'
-import Topbar from '../topbar/Topbar'
+import classes from './PrivateLayout.module.scss'
 import { AuthService } from '../../services/auth/auth-service'
-import DragonDetails from '../../features/dragon/dragon-details/DragonDetails'
-import DragonList from '../../features/dragon/dragon-list/DragonList'
-import DragonForm from '../../features/dragon/dragon-form/DragonForm'
+import Sidebar from '../../components/sidebar/Sidebar'
+import Topbar from '../../components/topbar/Topbar'
+import DragonList from '../../pages/dragon-list/DragonList'
+import DragonForm from '../../pages/dragon-form/DragonForm'
+import DragonDetails from '../../pages/dragon-details/DragonDetails'
 
 function isMobile() {
   return window.matchMedia('(max-width: 767px)').matches
 }
 
-function Layout() {
+function PrivateLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(isMobile() ? false : true)
 
   if (!AuthService.isUserLogged()) {
@@ -42,4 +42,4 @@ function Layout() {
   )
 }
 
-export default Layout
+export default PrivateLayout

@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route } from 'react-router-dom'
 import DragonList from './DragonList'
-import { Dragon } from '../../types/dragon'
-import DragonService from '../../services/dragon-service'
+import { Dragon } from '../../interfaces/dragon'
+import { DragonService } from '../../services/dragon/dragon-service'
 
 describe('Dragons', () => {
   const dragons: Dragon[] = [
