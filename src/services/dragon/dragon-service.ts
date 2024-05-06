@@ -1,4 +1,4 @@
-import { Dragon } from '../types/dragon'
+import { Dragon } from '../../types/dragon'
 
 const API_URL = 'https://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1'
 
@@ -89,7 +89,7 @@ async function removeDragon(id: Dragon['id']): Promise<Dragon> {
   return await response.json()
 }
 
-export default {
+export const DragonService = {
   fetchDragons,
   fetchDragon,
   createDragon,

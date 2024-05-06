@@ -10,17 +10,22 @@ function login({ email, password }: Credentials): Promise<void> {
         localStorage.setItem('token', 'token-test')
         resolve()
       } else {
-        reject()
+        reject('wrong credentials')
       }
     }, 500)
   })
+}
+
+function logout() {
+  localStorage.setItem('token', '')
 }
 
 function isUserLogged() {
   return Boolean(localStorage.getItem('token'))
 }
 
-export default {
+export const AuthService = {
   login,
+  logout,
   isUserLogged,
 }
